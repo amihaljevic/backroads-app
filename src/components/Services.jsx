@@ -1,0 +1,27 @@
+import React from 'react'
+import { services } from '../data';
+import Title from './Title';
+
+const Services = () => {
+  return (
+    <section className="section services" id="services">
+      <Title title="our" subtitle="services" />
+
+      <div className="section-center services-center">
+        {services.map(service => (
+          <article className="service" key={service.id}>
+            <span className="service-icon"><i className={`fas ${service.icon} fa-fw`}></i></span>
+            <div className="service-info">
+              <h4 className="service-title">{service.title}</h4>
+              <p className="service-text">
+                {service.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export default Services
